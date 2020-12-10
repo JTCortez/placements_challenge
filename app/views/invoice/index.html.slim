@@ -1,0 +1,37 @@
+h1
+  | Invoice#index
+  '
+  small[] (find me in app/views/invoice/index.html.slim)
+
+br
+br
+#pio-teaser-app
+  h3.text-muted
+    i.fa.fa-cog.fa-spin
+    | Loading React.js Component&hellip;
+
+br
+br
+hr
+
+br
+br
+.panel.panel-success
+  .panel-heading
+    | Example JSON
+  .panel-body
+    p Please write your React.js component working with the following JSON shape.
+
+    pre#example-json
+      h3.text-muted
+        i.fa.fa-cog.fa-spin
+        | Loading
+        | &hellip;
+
+
+coffee:
+  $(->
+    $.get('/invoice/example.json').done((res) ->
+      $('#example-json').text(res)
+    )
+  )
